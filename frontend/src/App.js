@@ -1,59 +1,75 @@
-import React from "react";
+import React, { useState, useRef } from "react";
+import TaskListContainer from "./components/TaskListContainer";
+import { TaskForm } from "./components/Form";
+import axios from "axios";
 import "./App.css";
 
 const App = () => {
+  const [editingTask, setEditingTask] = useState(null);
+  const taskListRef = useRef(null);
+
+  const handleEdit = (task) => {
+    setEditingTask(task);
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3001/tasks/${id}`);
+      taskListRef.current.fetchTasks();
+    } catch (error) {
+      console.error("Error deleting task", error);
+    }
+  };
+
+  const handleUpdate = async (formData) => {
+    try {
+      await axios.put(
+        `http://localhost:3001/tasks/${editingTask.id}`,
+        formData
+      );
+      setEditingTask(null);
+      taskListRef.current.fetchTasks();
+    } catch (error) {
+      console.error("Error updating task", error);
+    }
+  };
+
+  const handleAddTask = async (formData) => {
+    try {
+      await axios.post("http://localhost:3001/tasks", formData);
+      taskListRef.current.fetchTasks();
+    } catch (error) {
+      console.error("Error adding task", error);
+    }
+  };
+
   return (
-  <html>
-    <div class="container">
-    <div class="FormStyle">
-    <form>
-        <div class="LeftFormStyle">
-            <h2>Add new Task</h2>
-            <p>Title:</p>
-            <input type="text" id="titleEntry" />
-            <p>Description:</p>
-            <textarea id="textEntry" cols="50" rows="5"></textarea>
-        </div>
-    </form>
-    <div class="UpperRightFormStyle">
-        <p>Heli</p>
-        <button onclick="addTask()">Hello</button>
-    </div>
-    </div>
+    <div className="container">
+      <h1>Task Management</h1>
 
+      <div className="add-form">
+        <h2>{editingTask ? "Edit Task" : "Add New Task"}</h2>
+        <TaskForm
+          onSubmit={editingTask ? handleUpdate : handleAddTask}
+          initialFormData={
+            editingTask || {
+              taskTitle: "",
+              description: "",
+              dateDue: "",
+              status: "to do", // Default value for new tasks
+            }
+          }
+          isEditing={!!editingTask}
+          setEditingTask={setEditingTask}
+        />
+      </div>
 
-  </div>
-  
-
-  
-  <h1 class="HeadTitle">TASK MANAGER</h1>
-
-  <div class="grid-container">
-    <div class="c1">
-        Available
+      <TaskListContainer
+        ref={taskListRef}
+        onEdit={handleEdit}
+        onDelete={handleDelete}
+      />
     </div>
-    <div class="c2">
-        In-Progress
-    </div>
-    <div class="c3">
-        Completed
-    </div>
-</div>
-
-<div class="grid-container">
-    <div class="item1" id="Available">
-        <div class="task">
-            <h1>Hiya</h1>
-            <body>
-                <p>FGo to scool</p>
-                <p>Due date: 10.5.20</p>
-            </body>
-        </div>
-    </div>
-    <div class="item2" id="In-Progress">2</div>
-    <div class="item3">3</div>
-  </div>
-  </html>
   );
 };
 

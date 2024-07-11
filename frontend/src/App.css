@@ -1,134 +1,112 @@
 /* App.css */
 .container {
-  background-color: aliceblue;
-  border-style: ridge;
-  border-color: #727c81cb;
-  border-radius: 2px;
-  border-width: 6px;
-  height: auto;
-
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
-
-
-
-.FormStyle{
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1fr, 2fr;
-  grid-template-rows: 1fr 1fr;
-  max-width: 33vw;
+ 
+h1 {
+  color: #333;
 }
-
-.FormStyle p{
-  margin: 0;
-  padding: 0;
+ 
+.add-form,
+.edit-form {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
 }
-
-.FormStyle h2{
-  margin: 0;
-  padding: 0;
+ 
+.add-form h2,
+.edit-form h2 {
+  color: #333;
 }
-
-
-.LeftFormStyle{
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  column-span: all;
-  margin: 0;
+ 
+.add-form form,
+.edit-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-
-.UpperRightFormStyle{
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  margin: 0;
+ 
+.add-form label,
+.edit-form label {
+  margin: 10px 0;
 }
-
-.grid-container{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  background-color: rgb(245, 245, 245);
-  column-width: 33vw;
+ 
+.add-form textarea,
+.edit-form textarea,
+.add-form select,
+.edit-form select,
+.add-form input,
+.edit-form input {
+  padding: 8px;
+  width: 100%;
+  margin: 5px 0;
+  border: 1px solid #ddd;
 }
-
-.grid-container > div {
-  direction: column;
-  text-align: center;
-  padding: 20x 0;
-
-  border-style: solid;
-  border-width: 5px;
-  border-color: black;
-  overflow: auto;
+ 
+.add-form button,
+.edit-form button {
+  padding: 10px 20px;
+  margin: 5px 0;
+  cursor: pointer;
 }
-
-
-.c1 {
-  font-size: 30px; 
-  background-color: white; 
-  border-radius: 10px ; 
-  height: 50px;
-  grid-column-start: 1;
-  grid-column-end: 2;
+ 
+.add-form button[type="submit"],
+.edit-form button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  border: none;
 }
-
-.c2 {
-  font-size: 30px; 
-  background-color: white; 
-  border-radius: 10px ; 
-  height: 50px;
-  grid-column-start: 2;
-  grid-column-end: 3;
+ 
+.add-form button[type="button"],
+.edit-form button[type="button"] {
+  background-color: #f44336;
+  color: white;
+  border: none;
 }
-
-.c3 {
-  font-size: 30px; 
-  background-color: white; 
-  border-radius: 10px ; 
-  height: 50px;
-  grid-column-start: 3;
-  grid-column-end: 4;
+ 
+.tasks-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
 }
-
-.item1 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  height: 900px;
+ 
+.tasks-table th,
+.tasks-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
-
-.item2{
-  grid-column-start: 2;
-  grid-column-end: 3;
+ 
+.tasks-table th {
+  background-color: #f4f4f4;
+  color: #333;
 }
-
-.item3{
-  grid-column-start: 3;
-  grid-column-end: 4;
+ 
+.tasks-table tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
-
-.HeadTitle{
-text-align: center;
-background-color: whitesmoke;
+ 
+.tasks-table tr:hover {
+  background-color: #f1f1f1;
 }
-
-.HeadTitle{
-  text-align: center;
-  background-color: whitesmoke;
+ 
+.edit-button,
+.delete-button {
+  padding: 6px 12px;
+  margin: 0 5px;
+  border: none;
+  cursor: pointer;
 }
-
-
-.task{
-height: 300px;
-width: 30vw;
-padding: 1vw, 1vw;
-margin: 10px;
-border-style: groove;
-border-radius: 3px;
-border-width: 5px;
-border-color: rgb(150, 95, 0);
-background-color: rgb(244, 218, 133);
+ 
+.edit-button {
+  background-color: #4caf50;
+  color: white;
+}
+ 
+.delete-button {
+  background-color: #f44336;
+  color: white;
 }
