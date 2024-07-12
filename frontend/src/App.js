@@ -56,7 +56,7 @@ const App = () => {
               taskTitle: "",
               description: "",
               dateDue: "",
-              status: "to do", // Default value for new tasks
+              status: "to-do", // Default value for new tasks
             }
           }
           isEditing={!!editingTask}

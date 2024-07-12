@@ -1,4 +1,9 @@
 /* App.css */
+
+html{
+  background-color: white;
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -6,28 +11,33 @@
   font-family: Arial, sans-serif;
 }
  
+
+
 h1 {
   color: #333;
+  text-align: center;
 }
  
 .add-form,
 .edit-form {
   margin: 20px 0;
   padding: 20px;
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
+  border: 5px ridge #dddddd;
+  background-color: aliceblue;
+
 }
  
 .add-form h2,
 .edit-form h2 {
   color: #333;
+  text-align: center;
 }
  
 .add-form form,
 .edit-form form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
 }
  
 .add-form label,
@@ -53,6 +63,9 @@ h1 {
   margin: 5px 0;
   cursor: pointer;
 }
+
+
+ 
  
 .add-form button[type="submit"],
 .edit-form button[type="submit"] {
@@ -78,6 +91,7 @@ h1 {
 .tasks-table td {
   border: 1px solid #ddd;
   padding: 8px;
+  text-align: center;
 }
  
 .tasks-table th {
@@ -86,13 +100,21 @@ h1 {
 }
  
 .tasks-table tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #dfdede;
 }
  
 .tasks-table tr:hover {
   background-color: #f1f1f1;
 }
  
+.tasks-table .edit-button:hover {
+  background-color: #03720b;
+}
+
+.tasks-table .delete-button:hover {
+  background-color: #720a03;
+}
+
 .edit-button,
 .delete-button {
   padding: 6px 12px;
@@ -105,8 +127,102 @@ h1 {
   background-color: #4caf50;
   color: white;
 }
- 
+
 .delete-button {
   background-color: #f44336;
   color: white;
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: 1fr 5px 1fr 5px 1fr;
+  background-color: white;
+  column-width: 33%;
+}
+
+.grid-container > div {
+  direction: column;
+  text-align: center;
+  padding: 20x 0;
+
+  border-width: 5px;
+  border-color: black;
+  overflow: auto;
+}
+
+
+.c1 {
+  border-radius: 10px;
+  font-size: 30px; 
+  background-color: white; 
+  height: 50px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  border-style: solid;
+  border-bottom-style: none;
+}
+
+.c2 {
+  border-radius: 10px;
+  font-size: 30px; 
+  background-color: white; 
+  height: 50px;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  border-style: solid;
+  border-bottom-style: none;
+}
+
+
+.c3 {
+  font-size: 30px; 
+  background-color: white; 
+  height: 50px;
+  border-radius: 10px;
+  grid-column-start: 5;
+  grid-column-end: 6;
+  border-style: solid;
+  border-bottom-style: none;
+}
+
+.to-do {
+  border-style: solid;
+  border-radius: 10px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  height: 500px;
+  background-color: #f9eec6;
+}
+
+.in-progress{
+  border-style: solid;
+  border-radius: 10px;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  height: 500px;
+  background-color: #f9eec6;
+}
+
+.complete{
+  border-style: solid;
+  border-radius: 10px;
+  grid-column-start: 5;
+  grid-column-end: 6;
+  height: 500px;
+  background-color: #f9eec6;
+}
+
+.task{
+  height: 300px;
+  padding: 1vw, 1vw;
+  margin: 10px;
+  border-style: groove;
+  border-radius: 3px;
+  border-width: 5px;
+  border-color: rgb(150, 95, 0);
+  background-color: rgb(244, 218, 133);
+  text-align: center;
+}
+
+.task p{
+  overflow-wrap: break-word;
 }
