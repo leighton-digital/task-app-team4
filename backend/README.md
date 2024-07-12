@@ -8,6 +8,12 @@ Manages the database which stores the created tasks
 
 From the backend folder run the command:
 
+Install the required packages
+
+### `npm i`
+
+Then start the application
+
 ### `npm start`
 
 This will start the backend server at `localhost:3001`
