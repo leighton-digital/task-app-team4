@@ -1,7 +1,7 @@
 /* App.css */
 
 html{
-  background-color: white;
+  background-color: #f1e6ea;
 }
 
 .container {
@@ -14,7 +14,8 @@ html{
 
 
 h1 {
-  color: #333;
+  color: #1b0354;
+  font-style: bold;
   text-align: center;
 }
  
@@ -22,14 +23,15 @@ h1 {
 .edit-form {
   margin: 20px 0;
   padding: 20px;
-  border: 5px ridge #dddddd;
-  background-color: aliceblue;
+  border: 15px solid #7f7272b6;
+  background-color: rgb(225, 229, 255);
+  border-radius: 20px;
 
 }
  
 .add-form h2,
 .edit-form h2 {
-  color: #333;
+  color: #1b0354;
   text-align: center;
 }
  
@@ -61,6 +63,7 @@ h1 {
 .edit-form button {
   padding: 10px 20px;
   margin: 5px 0;
+  border-radius: 15px;
   cursor: pointer;
 }
 
@@ -74,6 +77,14 @@ h1 {
   border: none;
 }
  
+.add-form button[type="submit"]:hover{
+  background-color: #03720b;
+}
+
+.edit-form button[type="button"]:hover{
+  background-color: #720a03;
+}
+
 .add-form button[type="button"],
 .edit-form button[type="button"] {
   background-color: #f44336;
@@ -107,6 +118,7 @@ h1 {
   background-color: #f1f1f1;
 }
  
+
 .tasks-table .edit-button:hover {
   background-color: #03720b;
 }
@@ -120,6 +132,7 @@ h1 {
   padding: 6px 12px;
   margin: 0 5px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
  
@@ -128,6 +141,7 @@ h1 {
   color: white;
 }
 
+
 .delete-button {
   background-color: #f44336;
   color: white;
@@ -135,17 +149,24 @@ h1 {
 .grid-container{
   display: grid;
   grid-template-columns: 1fr 5px 1fr 5px 1fr;
-  background-color: white;
+  background-color: #f1e6ea;
   column-width: 33%;
+}
+
+.grid-container .edit-button:hover{
+  background-color: #03720b;
+}
+
+.grid-container .delete-button:hover{
+  background-color: #7c0606;
 }
 
 .grid-container > div {
   direction: column;
   text-align: center;
   padding: 20x 0;
-
-  border-width: 5px;
-  border-color: black;
+  border-width: 8px;
+  border-color: #7f7272b6;
   overflow: auto;
 }
 
@@ -153,35 +174,41 @@ h1 {
 .c1 {
   border-radius: 10px;
   font-size: 30px; 
-  background-color: white; 
+  font-style: bold;
+  background-color: rgba(255, 255, 255, 0.372); 
   height: 50px;
   grid-column-start: 1;
   grid-column-end: 2;
   border-style: solid;
   border-bottom-style: none;
+  color: #1b0354
 }
 
 .c2 {
   border-radius: 10px;
   font-size: 30px; 
-  background-color: white; 
+  font-style: bold;
+  background-color: rgba(255, 255, 255, 0.372); 
   height: 50px;
   grid-column-start: 3;
   grid-column-end: 4;
   border-style: solid;
   border-bottom-style: none;
+  color: #1b0354
 }
 
 
 .c3 {
   font-size: 30px; 
-  background-color: white; 
+  font-style: bold;
+  background-color: rgba(255, 255, 255, 0.372); 
   height: 50px;
   border-radius: 10px;
   grid-column-start: 5;
   grid-column-end: 6;
   border-style: solid;
   border-bottom-style: none;
+  color: #1b0354
 }
 
 .to-do {
@@ -190,7 +217,7 @@ h1 {
   grid-column-start: 1;
   grid-column-end: 2;
   height: 500px;
-  background-color: #f9eec6;
+  background-color: #b7b7ba6d;
 }
 
 .in-progress{
@@ -199,7 +226,7 @@ h1 {
   grid-column-start: 3;
   grid-column-end: 4;
   height: 500px;
-  background-color: #f9eec6;
+  background-color: #b7b7ba6d;
 }
 
 .complete{
@@ -208,18 +235,18 @@ h1 {
   grid-column-start: 5;
   grid-column-end: 6;
   height: 500px;
-  background-color: #f9eec6;
+  background-color: #b7b7ba6d;
 }
 
 .task{
   height: 300px;
   padding: 1vw, 1vw;
   margin: 10px;
-  border-style: groove;
-  border-radius: 3px;
+  border-style: solid;
+  border-radius: 8px;
   border-width: 5px;
-  border-color: rgb(150, 95, 0);
-  background-color: rgb(244, 218, 133);
+  border-color: rgb(0, 0, 0);
+  background-color: rgb(223, 233, 249);
   text-align: center;
 }
 
