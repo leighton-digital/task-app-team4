@@ -8,6 +8,10 @@ Manages the website displayed to the user and the inputs taken from the user
 
 From the frontend folder run the command:
 
+Install the required packages
+
+### `npm i`
+
 ### `npm start`
 
 This will start the webserver at `localhost:3000`
